@@ -6,39 +6,50 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 17:49:11 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/19 19:37:53 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/23 19:13:16 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+char			**ft_split(char *s, const char c);
+static void		free_arr_of_str(char **arr, size_t i);
 static size_t	count_words(char const *s, char c);
-char			**ft_split(char *s, char c);
-char			*w_alloc(char **arr, size_t i, char *s, char c);
+static size_t	str_to_arr(char **arr, size_t i, const char *s, char c);
 
 int	main(void)
 {
 	char	**arr;
 	int		i;
 
-	i = 0;
 	arr = ft_split("hola buenas tardes noches", ' ');
-	while (i < 5)
+	printf("-----------------------------------------------------\n");
+	i = 0;
+	while (i <= 4)
 	{
-		printf("%d ", i);
-		printf("%s\n", arr[i]);
+		printf("%s %d\n", arr[i], i);
 		i++;
 	}
+	i--;
+	i--;
+	while (i >= 0)
+	{
+		printf("%s\n", arr[i]);
+		free (arr[i]);
+		i--;
+	}
+	free (arr);
 }
 
-char	**ft_split(char *s, char c)
+char	**ft_split(char *s, const char c)
 {
 	char	**arr;
-	size_t	n_words;
 	size_t	i;
+	size_t	n_words;
+	size_t	len;
 
 	n_words = count_words(s, c);
-	arr = malloc(n_words + 1);
+	arr = malloc((n_words + 1) * sizeof(char *));
 	if (arr == NULL)
 		return (NULL);
 	i = 0;
@@ -46,52 +57,54 @@ char	**ft_split(char *s, char c)
 	{
 		while (*s == c)
 			s++;
-		//suma los caraceres que he me movido
-		//printf("%s\n", s);
-		s = w_alloc(arr, i, s, c);
+		len = str_to_arr(arr, i, s, c);
+		if (len == 0)
+		{
+			free_arr_of_str(arr, i);
+			return (NULL);
+		}
+		s += len;
 		i++;
 	}
-	printf ("Count:%zu, i:%zu\n", n_words, i);
 	arr[i] = NULL;
 	return (arr);
 }
 
-char	*w_alloc(char **arr, size_t i, char *s, char c)
+static void	free_arr_of_str(char **arr, size_t i)
 {
-	char	*s2;
+	size_t	index;
+
+	index = 0;
+	while (index < i)
+	{
+		free(arr[index]);
+		index++;
+	}
+	free(arr);
+}
+
+size_t	str_to_arr(char **arr, size_t i, const char *s, char c)
+{
+	const char	*s2;
 	char		*buffer;
-	char		*start_buffer;
 	size_t		len;
 
 	s2 = s;
-	len = 0;
 	while (*s != c && *s)
-	{
-		printf("%c\n", *s);
-		len++;
 		s++;
-	}
-	//printf("%zu\n", len);
-	buffer = malloc(len + 1);
+	len = s - s2;
+	buffer = malloc((len + 1) * sizeof(char));
 	if (buffer == NULL)
-		return (NULL);
-	start_buffer = buffer;
-	while (*s2 != c && *s2)
-	{
-		*buffer = *s2;
-		buffer++;
-		s2++;
-	}
-	*buffer = 0;
-	printf("%s\n", start_buffer);
-	arr[i] = start_buffer;
-	return (s);
+		return (0);
+	buffer = ft_memcpy(buffer, s2, len);
+	buffer[len] = 0;
+	arr[i] = buffer;
+	return (len);
 }
 
 static size_t	count_words(char const *s, char c)
 {
 	size_t	count;
-	size_t	len;
 
 	count = 0;
 	while (*s)

@@ -6,43 +6,41 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 09:38:00 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/19 10:39:16 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/23 18:49:50 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	*ft_memcpy(void *dest, const void *src, t_size_t n)
+void	*ft_memmove(void *dest, const void *src, t_size_t n)
 {
-	void	*i;
-
-	i = dest;
-	while (n > 0)
+	if (n == 0 || dest == src)
+		return (dest);
+	if (dest <= src)
+		dest = ft_memcpy(dest, src, n);
+	else
 	{
-		*(unsigned char *) i = *(unsigned char *) src;
-		i = (unsigned char *) i + 1;
-		src = (unsigned char *) src + 1;
-		n--;
+		dest = (unsigned char *) dest + (n - 1);
+		src = (unsigned char *) src + (n - 1);
+		while (n > 0)
+		{
+			*(unsigned char *) dest = *(unsigned char *) src;
+			dest = (unsigned char *) dest - 1;
+			src = (unsigned char *) src - 1;
+			n--;
+		}
+		dest = (unsigned char *) dest + 1;
+		printf("%s\n", (unsigned char *)dest);
 	}
 	return (dest);
 }
 
-void	*ft_memmove(void *dest, const void *src, t_size_t n)
+int main(void)
 {
-	unsigned char	*bytes;
-	unsigned char	*f_bytes;
-	t_size_t		n_clone;
-
-	bytes = malloc(n);
-	f_bytes = bytes;
-	n_clone = n;
-
-	while (n > 0)
-	{
-		*bytes = *(unsigned char *) src;
-		src = (unsigned char *)src + 1;
-		bytes++;
-		n--;
-	}
-	return (ft_memcpy(dest, f_bytes, n_clone));
+	char str[] = "123456";
+	char *dest = &str[2];
+	char *src = str;
+	char *result = ft_memmove(dest, src, 4);
+	printf("%s\n", result);
+	//121234
 }

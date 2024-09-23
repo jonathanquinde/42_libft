@@ -6,26 +6,11 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 13:30:35 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/19 17:47:12 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/23 15:15:18 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char	*ft_strcpy(char *dest, char *src)
-{
-	char	*inital;
-
-	inital = dest;
-	while (*src)
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-    *dest = 0;
-	return (inital);
-}
 
 char	*ft_strdup(const char *s)
 {
@@ -36,6 +21,7 @@ char	*ft_strdup(const char *s)
 	buffer = malloc(len + 1);
 	if (buffer == NULL)
 		return (NULL);
-	buffer = ft_strcpy(buffer, s);
+	buffer = ft_memcpy(buffer, s, len);
+    buffer[len] = 0;
 	return (buffer);
 }

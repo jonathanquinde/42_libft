@@ -6,7 +6,7 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:44:55 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/19 18:02:22 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/23 14:58:47 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,4 @@ t_size_t	ft_strlcpy(char *dst, const char *src, t_size_t size)
 	}
 	*dst = 0;
 	return (len);
-}
-
-static t_size_t	ft_strlen(char *str)
-{
-	char	*start;
-
-	start = str;
-	while (*str)
-		str++;
-	return (str - start);
 }
