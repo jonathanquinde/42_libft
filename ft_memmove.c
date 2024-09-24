@@ -6,13 +6,13 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 09:38:00 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/23 18:49:50 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/24 19:08:33 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, t_size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	if (n == 0 || dest == src)
 		return (dest);

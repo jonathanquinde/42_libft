@@ -6,16 +6,16 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 11:03:13 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/19 13:30:21 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/24 19:11:29 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(t_size_t nmemb, t_size_t size)
+void	*calloc(size_t nmemb, size_t size)
 {
 	unsigned char	*buffer;
-	t_size_t		buffer_size;
+	size_t			buffer_size;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);

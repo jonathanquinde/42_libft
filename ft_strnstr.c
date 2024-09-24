@@ -6,7 +6,7 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:20:11 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/18 16:29:52 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/24 19:04:31 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,3 @@ char	*strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
-
-//mira el ejemplo del manual

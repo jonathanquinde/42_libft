@@ -6,13 +6,13 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:42:09 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/18 19:19:05 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/24 19:07:31 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, t_size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	while (n > 0)
 	{
