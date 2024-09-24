@@ -6,15 +6,15 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 14:48:21 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/16 16:03:32 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/24 15:09:59 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
-	char	*start;
+	const char	*start;
 
 	start = str;
 	while (*str)
