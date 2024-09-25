@@ -6,13 +6,13 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 11:03:13 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/24 19:11:29 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/25 15:25:03 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	unsigned char	*buffer;
 	size_t			buffer_size;

@@ -6,11 +6,13 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 14:30:33 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/16 14:45:30 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/25 15:21:37 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascci(int c)
+#include "libft.h"
+
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

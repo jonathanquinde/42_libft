@@ -6,7 +6,7 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 13:44:00 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/25 13:50:53 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/25 15:26:07 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char			*itoa(int n);
 static size_t	calculate_digits(int n);
 static void		ft_putnbr(char *buffer, int n);
 
-char	*itoa(int n)
+char	*ft_itoa(int n)
 {
 	size_t	flag;
 	size_t	n_digits;
