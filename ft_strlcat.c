@@ -6,7 +6,7 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 16:25:21 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/24 15:00:55 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/25 14:49:49 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	len_dst = ft_strlen(dst);
 	len_src = ft_strlen(src);
-
-	if (size <= dst)
+	if (size <= len_dst)
 		return (size + len_src);
 	while (*dst && size > 1)
 	{

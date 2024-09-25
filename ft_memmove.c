@@ -6,7 +6,7 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 09:38:00 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/24 19:08:33 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/25 14:38:06 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			n--;
 		}
 		dest = (unsigned char *) dest + 1;
-		printf("%s\n", (unsigned char *)dest);
 	}
 	return (dest);
-}
-
-int main(void)
-{
-	char str[] = "123456";
-	char *dest = &str[2];
-	char *src = str;
-	char *result = ft_memmove(dest, src, 4);
-	printf("%s\n", result);
-	//121234
 }

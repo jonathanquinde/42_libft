@@ -6,24 +6,15 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 13:44:00 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/24 15:37:51 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/25 13:50:53 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	calculate_digits(int n);
 char			*itoa(int n);
+static size_t	calculate_digits(int n);
 static void		ft_putnbr(char *buffer, int n);
-
-int main(void)
-{
-	char *str;
-
-	str = itoa(-2147483647);
-	printf("-----------------------------------------------------------\n%s\n", str);
-	free (str);
-}
 
 char	*itoa(int n)
 {
@@ -43,7 +34,6 @@ char	*itoa(int n)
 	buffer = malloc(n_digits + flag + 1);
 	if (buffer == NULL)
 		return (NULL);
-	printf("Size: %zu\n", n_digits + flag + 1);
 	if (flag)
 		*buffer++ = '-';
 	ft_putnbr(buffer + (n_digits - 1), n);
@@ -56,7 +46,6 @@ static void	ft_putnbr(char *buffer, int n)
 	if (n > 9)
 		ft_putnbr(buffer - 1, n / 10);
 	*buffer = (n % 10) + '0';
-	printf("%c\n", *buffer);
 }
 
 static size_t	calculate_digits(int n)

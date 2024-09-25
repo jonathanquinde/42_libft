@@ -6,7 +6,7 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:01:31 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/16 15:10:39 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/25 14:42:05 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@ char	*strchr(const char *s, int c)
 	while (*s)
 	{
 		if (*s == c)
-			return (s);
+			return ((char *) s);
 		s++;
 	}
 	if (c == 0)
-		return (s);
-	return ('\0');
+		return ((char *) s);
+	return ("\0");
 }

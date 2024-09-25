@@ -6,23 +6,14 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:19:42 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/24 17:18:45 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/25 15:01:52 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		is_ch_in_str(const char word, const char *str);
-char	*ft_strtrim(char const *s1, char const *set);
-
-int	main(void)
-{
-	char	*buffer;
-
-	buffer = ft_strtrim("wxwxwxwwxwxwxw", "xw");
-	printf("%s", buffer);
-	free(buffer);
-}
+char			*ft_strtrim(char const *s1, char const *set);
+static int		is_ch_in_str(const char word, const char *str);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -53,7 +44,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (f_buffer);
 }
 
-int	is_ch_in_str(const char word, const char *str)
+static int	is_ch_in_str(const char word, const char *str)
 {
 	while (*str)
 	{

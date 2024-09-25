@@ -6,9 +6,11 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:00:20 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/16 15:42:29 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/25 14:09:51 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

@@ -6,7 +6,7 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 17:49:11 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/23 19:13:16 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/25 13:34:32 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,7 @@
 char			**ft_split(char *s, const char c);
 static void		free_arr_of_str(char **arr, size_t i);
 static size_t	count_words(char const *s, char c);
-static size_t	str_to_arr(char **arr, size_t i, const char *s, char c);
-
-int	main(void)
-{
-	char	**arr;
-	int		i;
-
-	arr = ft_split("hola buenas tardes noches", ' ');
-	printf("-----------------------------------------------------\n");
-	i = 0;
-	while (i <= 4)
-	{
-		printf("%s %d\n", arr[i], i);
-		i++;
-	}
-	i--;
-	i--;
-	while (i >= 0)
-	{
-		printf("%s\n", arr[i]);
-		free (arr[i]);
-		i--;
-	}
-	free (arr);
-}
+static size_t	str_to_arr(char **arr_element, const char *s, char c);
 
 char	**ft_split(char *s, const char c)
 {
@@ -55,9 +31,7 @@ char	**ft_split(char *s, const char c)
 	i = 0;
 	while (i < n_words)
 	{
-		while (*s == c)
-			s++;
-		len = str_to_arr(arr, i, s, c);
+		len = str_to_arr(&arr[i], s, c);
 		if (len == 0)
 		{
 			free_arr_of_str(arr, i);
@@ -83,22 +57,24 @@ static void	free_arr_of_str(char **arr, size_t i)
 	free(arr);
 }
 
-size_t	str_to_arr(char **arr, size_t i, const char *s, char c)
+static size_t	str_to_arr(char **arr_element, const char *s, char c)
 {
-	const char	*s2;
+	const char	*start_word;
 	char		*buffer;
 	size_t		len;
 
-	s2 = s;
+	while (*s == c)
+		s++;
+	start_word = s;
 	while (*s != c && *s)
 		s++;
-	len = s - s2;
-	buffer = malloc((len + 1) * sizeof(char));
+	len = s - start_word;
+	buffer = malloc(len + 1);
 	if (buffer == NULL)
 		return (0);
-	buffer = ft_memcpy(buffer, s2, len);
+	buffer = ft_memcpy(buffer, start_word, len);
 	buffer[len] = 0;
-	arr[i] = buffer;
+	*arr_element = buffer;
 	return (len);
 }
 

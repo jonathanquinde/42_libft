@@ -6,13 +6,13 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 19:12:50 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/18 19:17:10 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/25 14:38:20 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, t_size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	void	*i;
 
