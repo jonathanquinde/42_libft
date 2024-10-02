@@ -6,7 +6,7 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 11:03:13 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/25 15:25:03 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/28 01:12:17 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	buffer = malloc(buffer_size);
 	if (buffer == NULL)
 		return (NULL);
-	while (buffer_size > 0)
-	{
-		*buffer = 0;
-		buffer++;
-		buffer_size--;
-	}
+	buffer = ft_memset(buffer, 0, buffer_size);
 	return (buffer);
 }

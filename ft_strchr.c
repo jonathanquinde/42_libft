@@ -6,19 +6,21 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:01:31 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/25 15:25:50 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/28 01:37:28 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == (unsigned char) c)
 			return ((char *) s);
 		s++;
 	}
-	if (c == 0)
+	if ((unsigned char)c == '\0')
 		return ((char *) s);
-	return ("\0");
+	return (NULL);
 }

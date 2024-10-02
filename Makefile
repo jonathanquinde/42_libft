@@ -1,6 +1,8 @@
 NAME = libft.a
 
 SRC = $(wildcard *.c)
+SRC_BONUS = $(wildcard *_bonus)
+OBJ_BONUS = $(SRC:.c=.o)
 OBJ = $(SRC:.c=.o)
 
 CC = cc
@@ -24,3 +26,7 @@ fclean: clean
 	@echo "Library and object files cleaned."
 
 re: fclean all
+
+bonus: $(NAME) $(OBJ_BONUS) 
+	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS) 
+	@echo "Library $(NAME) created successfully!"

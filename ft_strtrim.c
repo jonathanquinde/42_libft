@@ -6,13 +6,12 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:19:42 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/25 15:01:52 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/09/28 10:08:25 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_strtrim(char const *s1, char const *set);
 static int		is_ch_in_str(const char word, const char *str);
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -21,11 +20,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	const char	*last;
 	size_t		len;
 	char		*buffer;
-	char		*f_buffer;
 
 	len = ft_strlen(s1);
 	initial = s1;
-	last = s1 + len - 1;
+	last = s1 + len;
 	while (is_ch_in_str(*initial, set))
 		initial++;
 	while (is_ch_in_str(*last, set))
@@ -33,15 +31,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	buffer = malloc(last - initial + 1);
 	if (buffer == NULL)
 		return (NULL);
-	f_buffer = buffer;
-	while (initial <= last)
-	{
-		*buffer = *initial;
-		buffer++;
-		initial++;
-	}
-	*buffer = 0;
-	return (f_buffer);
+	ft_strlcpy(buffer, initial, last - initial + 1);
+	return (buffer);
 }
 
 static int	is_ch_in_str(const char word, const char *str)
