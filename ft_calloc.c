@@ -6,7 +6,7 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 11:03:13 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/28 01:12:17 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/10/03 16:49:13 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t			buffer_size;
 
 	if (nmemb == 0 || size == 0)
-		return (NULL);
+		return (malloc(0));
 	if (nmemb > 4294967295 / size)
 		return (NULL);
 	buffer_size = nmemb * size;

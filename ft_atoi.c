@@ -6,7 +6,7 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 14:43:55 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/18 15:24:31 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/10/03 14:27:06 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_atoi(const char *ntpr)
 	int	num;
 
 	num = 0;
-	if (ntpr == 0)
+	if (ntpr == NULL)
 		return (num);
 	while (*ntpr == ' ' || (*ntpr >= '\t' && *ntpr <= '\r'))
 		ntpr++;

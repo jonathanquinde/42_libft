@@ -6,7 +6,7 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 17:49:11 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/25 13:34:32 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/10/03 14:22:39 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	**ft_split(char *s, const char c)
 	size_t	n_words;
 	size_t	len;
 
+	if (s == NULL)
+		return (NULL);
 	n_words = count_words(s, c);
 	arr = malloc((n_words + 1) * sizeof(char *));
 	if (arr == NULL)
