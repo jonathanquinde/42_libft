@@ -6,16 +6,15 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 17:49:11 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/10/03 14:22:39 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/10/04 17:22:01 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			**ft_split(char *s, const char c);
 static void		free_arr_of_str(char **arr, size_t i);
 static size_t	count_words(char const *s, char c);
-static size_t	str_to_arr(char **arr_element, const char *s, char c);
+static size_t	str_to_arr(char **arr_element, char **s, char c);
 
 char	**ft_split(char *s, const char c)
 {
@@ -33,7 +32,7 @@ char	**ft_split(char *s, const char c)
 	i = 0;
 	while (i < n_words)
 	{
-		len = str_to_arr(&arr[i], s, c);
+		len = str_to_arr(&arr[i], &s, c);
 		if (len == 0)
 		{
 			free_arr_of_str(arr, i);
@@ -59,22 +58,22 @@ static void	free_arr_of_str(char **arr, size_t i)
 	free(arr);
 }
 
-static size_t	str_to_arr(char **arr_element, const char *s, char c)
+static size_t	str_to_arr(char **arr_element, char **s, char c)
 {
-	const char	*start_word;
+	const char	*end_word;
 	char		*buffer;
 	size_t		len;
 
-	while (*s == c)
-		s++;
-	start_word = s;
-	while (*s != c && *s)
-		s++;
-	len = s - start_word;
+	while (**s == c)
+		(*s)++;
+	end_word = *s;
+	while (*end_word != c && *end_word)
+		end_word++;
+	len = end_word - *s;
 	buffer = malloc(len + 1);
 	if (buffer == NULL)
 		return (0);
-	buffer = ft_memcpy(buffer, start_word, len);
+	buffer = ft_memcpy(buffer, *s, len);
 	buffer[len] = 0;
 	*arr_element = buffer;
 	return (len);

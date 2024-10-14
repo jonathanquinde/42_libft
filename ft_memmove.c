@@ -6,7 +6,7 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 09:38:00 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/25 14:38:06 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/10/04 20:30:33 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if (n == 0 || dest == src)
-		return (dest);
 	if (dest <= src)
 		dest = ft_memcpy(dest, src, n);
 	else

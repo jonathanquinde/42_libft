@@ -6,13 +6,11 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 14:43:55 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/10/03 14:27:06 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:10:36 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_is_digit(char word);
 
 int	ft_atoi(const char *ntpr)
 {
@@ -31,17 +29,10 @@ int	ft_atoi(const char *ntpr)
 			sign = -1;
 		ntpr++;
 	}
-	while (ft_is_digit(*ntpr))
+	while (ft_isdigit(*ntpr))
 	{
 		num = num * 10 + (*ntpr - '0');
 		ntpr++;
 	}
 	return (num * sign);
-}
-
-static int	ft_is_digit(char word)
-{
-	if (word >= '0' && word <= '9')
-		return (1);
-	return (0);
 }

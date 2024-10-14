@@ -6,7 +6,7 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 17:20:01 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/09/25 13:47:05 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/10/11 13:02:04 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	len;
 	char	*buffer;
 
+	if (s == NULL || f == NULL)
+		return (NULL);
 	len = ft_strlen(s);
 	buffer = malloc(len + 1);
 	if (buffer == NULL)

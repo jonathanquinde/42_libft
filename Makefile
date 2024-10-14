@@ -40,6 +40,8 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(OBJ) $(OBJ_BONUS) 
+bonus: $(NAME) $(OBJ) $(OBJ_BONUS) 
 	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS) 
 	@echo "Library $(NAME) created successfully!"
+
+.PHONY: clean fclean re bonus

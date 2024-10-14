@@ -6,7 +6,7 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:41:45 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/10/03 16:49:36 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/10/04 20:31:39 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	len_s;
 	size_t	characters_left;
 
+	if (s == NULL)
+		return (NULL);
 	len_s = ft_strlen(s);
 	if (start >= len_s || s == NULL || *s == 0)
 		return (ft_strdup(""));
