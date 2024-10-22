@@ -6,7 +6,7 @@
 /*   By: jquinde- < jquinde-@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 14:43:55 by jquinde-          #+#    #+#             */
-/*   Updated: 2024/10/04 16:10:36 by jquinde-         ###   ########.fr       */
+/*   Updated: 2024/10/22 14:53:07 by jquinde-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,6 @@ int	ft_atoi(const char *ntpr)
 		ntpr++;
 	}
 	return (num * sign);
+	a
 }
+
